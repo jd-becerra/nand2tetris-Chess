@@ -1,0 +1,540 @@
+function Pieces.place 5
+push constant 1216
+pop local 1
+push constant 224
+pop local 3
+push constant 6176
+pop local 0
+push constant 7168
+pop local 4
+push constant 0
+pop local 2
+label WHILE_EXP0
+push local 2
+push constant 8
+lt
+not
+if-goto WHILE_END0
+push local 1
+call Sprites.pawn_black 1
+pop temp 0
+push local 1
+push constant 2
+add
+pop local 1
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP0
+label WHILE_END0
+push local 3
+call Sprites.rook_black 1
+pop temp 0
+push local 3
+push constant 2
+add
+call Sprites.knight_black 1
+pop temp 0
+push local 3
+push constant 4
+add
+call Sprites.bishop_black 1
+pop temp 0
+push local 3
+push constant 6
+add
+call Sprites.king_black 1
+pop temp 0
+push local 3
+push constant 8
+add
+call Sprites.queen_black 1
+pop temp 0
+push local 3
+push constant 10
+add
+call Sprites.bishop_black 1
+pop temp 0
+push local 3
+push constant 12
+add
+call Sprites.knight_black 1
+pop temp 0
+push local 3
+push constant 14
+add
+call Sprites.rook_black 1
+pop temp 0
+push constant 0
+pop local 2
+label WHILE_EXP1
+push local 2
+push constant 8
+lt
+not
+if-goto WHILE_END1
+push local 0
+call Sprites.pawn_white 1
+pop temp 0
+push local 0
+push constant 2
+add
+pop local 0
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP1
+label WHILE_END1
+push local 4
+call Sprites.rook_white 1
+pop temp 0
+push local 4
+push constant 2
+add
+call Sprites.knight_white 1
+pop temp 0
+push local 4
+push constant 4
+add
+call Sprites.bishop_white 1
+pop temp 0
+push local 4
+push constant 6
+add
+call Sprites.king_white 1
+pop temp 0
+push local 4
+push constant 8
+add
+call Sprites.queen_white 1
+pop temp 0
+push local 4
+push constant 10
+add
+call Sprites.bishop_white 1
+pop temp 0
+push local 4
+push constant 12
+add
+call Sprites.knight_white 1
+pop temp 0
+push local 4
+push constant 14
+add
+call Sprites.rook_white 1
+pop temp 0
+push constant 0
+return
+function Pieces.move 11
+push argument 0
+push constant 0
+call String.charAt 2
+pop local 0
+push constant 0
+pop local 7
+push constant 0
+pop local 9
+push constant 0
+pop local 8
+push constant 0
+pop local 10
+push argument 0
+push constant 3
+call String.charAt 2
+pop local 1
+push argument 0
+push constant 2
+call String.charAt 2
+pop local 2
+push argument 0
+push constant 6
+call String.charAt 2
+pop local 3
+push argument 0
+push constant 5
+call String.charAt 2
+pop local 4
+push constant 7168
+push constant 992
+push local 1
+push constant 49
+sub
+call Math.multiply 2
+sub
+push local 2
+push constant 65
+sub
+push constant 2
+call Math.multiply 2
+add
+pop local 5
+push constant 7168
+push constant 992
+push local 3
+push constant 49
+sub
+call Math.multiply 2
+sub
+push local 4
+push constant 65
+sub
+push constant 2
+call Math.multiply 2
+add
+pop local 6
+push argument 1
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+push constant 80
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 6
+call Sprites.pawn_white 1
+pop temp 0
+label IF_FALSE1
+push local 0
+push constant 78
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push local 6
+call Sprites.knight_white 1
+pop temp 0
+label IF_FALSE2
+push local 0
+push constant 66
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push local 6
+call Sprites.bishop_white 1
+pop temp 0
+label IF_FALSE3
+push local 0
+push constant 82
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 6
+call Sprites.rook_white 1
+pop temp 0
+label IF_FALSE4
+push local 0
+push constant 81
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push local 6
+call Sprites.queen_white 1
+pop temp 0
+label IF_FALSE5
+push local 0
+push constant 75
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push local 6
+call Sprites.king_white 1
+pop temp 0
+label IF_FALSE6
+label IF_FALSE0
+push argument 1
+not
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push local 0
+push constant 80
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push local 6
+call Sprites.pawn_black 1
+pop temp 0
+label IF_FALSE8
+push local 0
+push constant 78
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push local 6
+call Sprites.knight_black 1
+pop temp 0
+label IF_FALSE9
+push local 0
+push constant 66
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push local 6
+call Sprites.bishop_black 1
+pop temp 0
+label IF_FALSE10
+push local 0
+push constant 82
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push local 6
+call Sprites.rook_black 1
+pop temp 0
+label IF_FALSE11
+push local 0
+push constant 81
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push local 6
+call Sprites.queen_black 1
+pop temp 0
+label IF_FALSE12
+push local 0
+push constant 75
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push local 6
+call Sprites.king_black 1
+pop temp 0
+label IF_FALSE13
+label IF_FALSE7
+push local 1
+push constant 49
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push constant 0
+not
+pop local 7
+label IF_FALSE14
+push local 1
+push constant 51
+eq
+if-goto IF_TRUE15
+goto IF_FALSE15
+label IF_TRUE15
+push constant 0
+not
+pop local 7
+label IF_FALSE15
+push local 1
+push constant 53
+eq
+if-goto IF_TRUE16
+goto IF_FALSE16
+label IF_TRUE16
+push constant 0
+not
+pop local 7
+label IF_FALSE16
+push local 1
+push constant 55
+eq
+if-goto IF_TRUE17
+goto IF_FALSE17
+label IF_TRUE17
+push constant 0
+not
+pop local 7
+label IF_FALSE17
+push local 2
+push constant 65
+eq
+if-goto IF_TRUE18
+goto IF_FALSE18
+label IF_TRUE18
+push local 7
+if-goto IF_TRUE19
+goto IF_FALSE19
+label IF_TRUE19
+push constant 0
+not
+pop local 9
+label IF_FALSE19
+label IF_FALSE18
+push local 2
+push constant 67
+eq
+if-goto IF_TRUE20
+goto IF_FALSE20
+label IF_TRUE20
+push local 7
+if-goto IF_TRUE21
+goto IF_FALSE21
+label IF_TRUE21
+push constant 0
+not
+pop local 9
+label IF_FALSE21
+label IF_FALSE20
+push local 2
+push constant 69
+eq
+if-goto IF_TRUE22
+goto IF_FALSE22
+label IF_TRUE22
+push local 7
+if-goto IF_TRUE23
+goto IF_FALSE23
+label IF_TRUE23
+push constant 0
+not
+pop local 9
+label IF_FALSE23
+label IF_FALSE22
+push local 2
+push constant 71
+eq
+if-goto IF_TRUE24
+goto IF_FALSE24
+label IF_TRUE24
+push local 7
+if-goto IF_TRUE25
+goto IF_FALSE25
+label IF_TRUE25
+push constant 0
+not
+pop local 9
+label IF_FALSE25
+label IF_FALSE24
+push local 1
+push constant 50
+eq
+if-goto IF_TRUE26
+goto IF_FALSE26
+label IF_TRUE26
+push constant 0
+not
+pop local 8
+label IF_FALSE26
+push local 1
+push constant 52
+eq
+if-goto IF_TRUE27
+goto IF_FALSE27
+label IF_TRUE27
+push constant 0
+not
+pop local 8
+label IF_FALSE27
+push local 1
+push constant 54
+eq
+if-goto IF_TRUE28
+goto IF_FALSE28
+label IF_TRUE28
+push constant 0
+not
+pop local 8
+label IF_FALSE28
+push local 1
+push constant 56
+eq
+if-goto IF_TRUE29
+goto IF_FALSE29
+label IF_TRUE29
+push constant 0
+not
+pop local 8
+label IF_FALSE29
+push local 2
+push constant 66
+eq
+if-goto IF_TRUE30
+goto IF_FALSE30
+label IF_TRUE30
+push local 8
+if-goto IF_TRUE31
+goto IF_FALSE31
+label IF_TRUE31
+push constant 0
+not
+pop local 10
+label IF_FALSE31
+label IF_FALSE30
+push local 2
+push constant 68
+eq
+if-goto IF_TRUE32
+goto IF_FALSE32
+label IF_TRUE32
+push local 8
+if-goto IF_TRUE33
+goto IF_FALSE33
+label IF_TRUE33
+push constant 0
+not
+pop local 10
+label IF_FALSE33
+label IF_FALSE32
+push local 2
+push constant 70
+eq
+if-goto IF_TRUE34
+goto IF_FALSE34
+label IF_TRUE34
+push local 8
+if-goto IF_TRUE35
+goto IF_FALSE35
+label IF_TRUE35
+push constant 0
+not
+pop local 10
+label IF_FALSE35
+label IF_FALSE34
+push local 2
+push constant 72
+eq
+if-goto IF_TRUE36
+goto IF_FALSE36
+label IF_TRUE36
+push local 8
+if-goto IF_TRUE37
+goto IF_FALSE37
+label IF_TRUE37
+push constant 0
+not
+pop local 10
+label IF_FALSE37
+label IF_FALSE36
+push local 9
+push local 10
+or
+if-goto IF_TRUE38
+goto IF_FALSE38
+label IF_TRUE38
+push local 5
+call Sprites.tile_black 1
+pop temp 0
+label IF_FALSE38
+push local 9
+push local 10
+or
+not
+if-goto IF_TRUE39
+goto IF_FALSE39
+label IF_TRUE39
+push local 5
+call Sprites.tile_white 1
+pop temp 0
+label IF_FALSE39
+push constant 0
+return

@@ -1,0 +1,122 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/Fraction/Main.jack
+
+// Chess?
+class Pieces {
+
+    function void place(){
+        var int init_pawn_white, init_pawn_black, pawn_i, init_black, init_white;
+
+        let init_pawn_black = 1216;
+        let init_black = 224;
+
+        let init_pawn_white = 6176;
+        let init_white = 7168;
+
+        //Black
+        let pawn_i = 0;
+        while(pawn_i < 8){
+            do Sprites.pawn_black(init_pawn_black);
+            let init_pawn_black = init_pawn_black + 2;
+            let pawn_i = pawn_i + 1;
+        }
+        do Sprites.rook_black(init_black);
+        do Sprites.knight_black(init_black + 2);
+        do Sprites.bishop_black(init_black + 4);
+        do Sprites.king_black(init_black + 6);
+        do Sprites.queen_black(init_black + 8);
+        do Sprites.bishop_black(init_black + 10);
+        do Sprites.knight_black(init_black + 12);
+        do Sprites.rook_black(init_black + 14);
+
+        //White
+        let pawn_i = 0;
+        while(pawn_i < 8){
+            do Sprites.pawn_white(init_pawn_white);
+            let init_pawn_white = init_pawn_white + 2;
+            let pawn_i = pawn_i + 1;
+        }
+        do Sprites.rook_white(init_white);
+        do Sprites.knight_white(init_white + 2);
+        do Sprites.bishop_white(init_white + 4);
+        do Sprites.king_white(init_white + 6);
+        do Sprites.queen_white(init_white + 8);
+        do Sprites.bishop_white(init_white + 10);
+        do Sprites.knight_white(init_white + 12);
+        do Sprites.rook_white(init_white + 14);
+
+/**    DELETE:    //TEST: MOVE A PAWN AND A KNIGHT (blacks)  */
+       // do Sys.wait(3000);
+        //do Sprites.tile_black(1216);
+        //do Sprites.pawn_black(2208);
+        //do Sys.wait(3000);
+
+//DELETE CODE ABOVE, JUST A TEST//
+
+        return;
+    }
+
+    function void move(String code, boolean turn_whites){
+        var char piece, i1, i2, f1, f2;
+        var int initial_pos, final_pos;
+        var boolean l1, l2, r1, r2;
+        let piece = code.charAt(0);
+
+        let l1 = false;
+        let r1 = false;
+        let l2 = false;
+        let r2 = false;
+
+        let i1 = code.charAt(3);
+        let i2 = code.charAt(2);
+        let f1 = code.charAt(6);
+        let f2 = code.charAt(5);
+
+        let initial_pos = (7168-(992*(i1-49))) + ((i2-65)*2);
+        let final_pos = (7168-(992*(f1-49))) + ((f2-65)*2);
+
+        //**WHITE PIECES **//
+        if(turn_whites){
+            //PAWN (P)
+            if(piece = 80){do Sprites.pawn_white(final_pos);}
+            //KNIGHT (N)
+            if(piece = 78){do Sprites.knight_white(final_pos);}
+            //BISHOP (B)
+            if(piece = 66){do Sprites.bishop_white(final_pos);}
+            //ROOK (R)
+            if(piece = 82){do Sprites.rook_white(final_pos);}
+            //QUEEN (Q)
+            if(piece = 81){do Sprites.queen_white(final_pos);}
+            //KING (K)
+            if(piece = 75){do Sprites.king_white(final_pos);}
+        }
+
+        //**BLACK PIECES **//
+        if(~turn_whites){
+            //PAWN (P)
+            if(piece = 80){do Sprites.pawn_black(final_pos);}
+            //KNIGHT (N)
+            if(piece = 78){do Sprites.knight_black(final_pos);}
+            //BISHOP (B)
+            if(piece = 66){do Sprites.bishop_black(final_pos);}
+            //ROOK (R)
+            if(piece = 82){do Sprites.rook_black(final_pos);}
+            //QUEEN (Q)
+            if(piece = 81){do Sprites.queen_black(final_pos);}
+            //KING (K)
+            if(piece = 75){do Sprites.king_black(final_pos);}
+        }
+
+        if(i1=49){let l1 = true;}if(i1=51){let l1 = true;}if(i1=53){let l1 = true;}if(i1=55){let l1 = true;}
+        if(i2=65){if(l1){let r1 = true;}}if(i2=67){if(l1){let r1 = true;}}if(i2=69){if(l1){let r1 = true;}}if(i2=71){if(l1){let r1 = true;}}
+        if(i1=50){let l2 = true;}if(i1=52){let l2 = true;}if(i1=54){let l2 = true;}if(i1=56){let l2 = true;}
+        if(i2=66){if(l2){let r2 = true;}}if(i2=68){if(l2){let r2 = true;}}if(i2=70){if(l2){let r2 = true;}}if(i2=72){if(l2){let r2 = true;}}
+
+        if(r1 | r2){do Sprites.tile_black(initial_pos);}
+        if(~(r1 | r2)){do Sprites.tile_white(initial_pos);}
+
+        return;
+    }
+}

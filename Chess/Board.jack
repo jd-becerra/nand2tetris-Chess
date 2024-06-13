@@ -1,0 +1,70 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/Fraction/Main.jack
+
+// Chess?
+class Board {
+
+    function void draw(){
+        var int square_size, init_whitefirst, init_black_first, first, last;
+
+        let square_size = 31;
+
+        let init_whitefirst = 0;
+        let init_black_first = 0;
+        let first = 0;
+        let last = square_size;
+
+        while(init_whitefirst<4){
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,0, last, square_size);
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,square_size, last, (square_size*2));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*2), last, (square_size*3));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*3), last, (square_size*4));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*4), last, (square_size*5));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*5), last, (square_size*6));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*6), last, (square_size*7));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*7), last, (square_size*8));
+
+            let init_whitefirst = init_whitefirst + 1;
+            let first = first + (square_size * 2);
+            let last = last + (square_size * 2);
+        }
+        let first = square_size;
+        let last = square_size * 2;
+
+        while(init_black_first<4){
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,0, last, square_size);
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,square_size, last, (square_size*2));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*2), last, (square_size*3));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*3), last, (square_size*4));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*4), last, (square_size*5));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*5), last, (square_size*6));
+            do Screen.setColor(1);
+            do Screen.drawRectangle(first,(square_size*6), last, (square_size*7));
+            do Screen.setColor(0);
+            do Screen.drawRectangle(first,(square_size*7), last, (square_size*8));
+
+            let init_black_first = init_black_first + 1;
+            let first = first + (square_size * 2);
+            let last = last + (square_size * 2);
+        }
+
+        return;
+    }
+
+}

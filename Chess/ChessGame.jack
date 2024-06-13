@@ -1,0 +1,63 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/Fraction/Main.jack
+
+// Chess?
+class ChessGame {
+
+    function void start(){
+        var String move;
+        var int i;
+        var char reset;
+        var boolean turn_whites;
+        let i = 0;
+        let turn_whites = true;
+
+        do Board.draw();
+        do Pieces.place();
+
+        do Output.moveCursor(1, 41);
+        do Output.printString("Chess game");
+        do Output.moveCursor(3, 38);
+        do Output.printString("Enter your move");
+        do Output.moveCursor(4, 38);
+        do Output.printString("Eg: N(B8-C6)");
+
+
+        do Output.moveCursor(10, 36);
+        do Output.printString("TURN: WHITES");
+        do Output.moveCursor(12, 38);
+        do Output.printString("P=Pawn;  N=Knight;");
+        do Output.moveCursor(13, 38);
+        do Output.printString("B=Bishop; R=Rook;");
+        do Output.moveCursor(14, 38);
+        do Output.printString("Q=Queen; K=King;");
+        do Output.moveCursor(17, 34);
+        do Output.printString("ENTER 'X' TO RESET GAME");
+
+        while(i = 0){
+            do Output.moveCursor(8, 34);
+            let move = Keyboard.readLine("Move:");
+            let reset = move.charAt(0);
+
+            if(reset=88){do ChessGame.start();}     //IF RESET IS "X", RESTART GAME
+
+            do Pieces.move(move, turn_whites);
+            do Output.moveCursor(8, 38); //"COVERS" PREVIOUS STRING ON SCREEN
+            do Output.printString("              ");
+
+            if(turn_whites){
+                do Output.moveCursor(10, 36);
+                do Output.printString("TURN: BLACKS");
+                let turn_whites = false;}
+            else{
+                do Output.moveCursor(10, 36);
+                do Output.printString("TURN: WHITES");
+                let turn_whites = true;}
+        }
+
+        return;
+    }
+
+}
