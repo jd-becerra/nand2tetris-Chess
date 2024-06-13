@@ -17,6 +17,7 @@ NOTE: the game doesn't have any prohibitions, so it won't stop you from moving y
 
 # Running the program
 You can run the game locally with the software provided in the course, or you can use the web IDE.
+More info: https://www.nand2tetris.org/software
 
 ## Using the web IDE
 1. The easiest way is to run it directly on the web IDE provided by the creators. Just go to the website:
