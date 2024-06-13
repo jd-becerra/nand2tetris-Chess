@@ -2,7 +2,7 @@
 
 ![Chessboard Diagram](https://github.com/jd-becerra/nand2tetris-Chess/assets/112126654/5e4b1c82-d80b-4c09-a673-03dee915f3a3)
 
-For this project, my goal was to simulate a chessboard in the VM Emulator that Nand2Tetris provides. There are a lot of things to improve and iron out, but the goal was to learn about assembly code and use my newly acquired skills.
+For this project, my goal was to simulate a chessboard in the VM Emulator that Nand2Tetris provides. There are a lot of things to improve and iron out, but the goal was to learn about assembly code and use my newly acquired skills on a fun project.
 
 To input a move, use the following syntax and press Enter (make sure to avoid spaces and write everything in caps, as the machine reads the command very literally):
 
