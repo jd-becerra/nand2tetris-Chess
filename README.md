@@ -22,6 +22,9 @@ You can run the game locally using the software provided in the Nand2Tetris cour
 More info: [Nand2Tetris Software](https://www.nand2tetris.org/software)
 
 ## Using the Web IDE
+
+![image](https://github.com/user-attachments/assets/d99e7cbc-a62d-4049-bf29-d40ddae8b212)
+
 1. The easiest way is to run it directly on the web IDE provided by the creators. Go to the website:
      [Nand2Tetris Web IDE VMEmulator](https://nand2tetris.github.io/web-ide/vm)
 2. In the VMCode section, add the entire "Chess" folder from this repository.
