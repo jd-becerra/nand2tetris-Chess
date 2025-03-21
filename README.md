@@ -17,7 +17,7 @@ To reset the game, enter "X" and press Enter.
 **BE CAREFUL:** The game does not enforce any prohibitions, so you can move pieces to any position on the chessboard, even if it doesn't make any sense.
 
 # Running the Program
-You can run the game locally using the software provided in the Nand2Tetris course, or you can use the web IDE.
+You can run the game locally using the software provided in the Nand2Tetris course, or you can use the web IDE (recommended).
 
 More info: [Nand2Tetris Software](https://www.nand2tetris.org/software)
 
