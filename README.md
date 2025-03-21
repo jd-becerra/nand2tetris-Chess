@@ -8,7 +8,8 @@ To input a move, use the following syntax and press Enter (make sure to avoid sp
 
 ![Move Syntax Diagram](https://github.com/jd-becerra/nand2tetris-Chess/assets/112126654/4840d1a1-58e0-4878-842e-03815c366765)
 
-Chess positions reference: 
+Chess positions reference:
+
 ![ChessBoard2-3414155825](https://github.com/user-attachments/assets/3dfdca08-90b0-43e2-bfc8-c522e3288843)
 
 To reset the game, enter "X" and press Enter.
